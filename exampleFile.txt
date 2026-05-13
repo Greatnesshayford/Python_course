@@ -1,0 +1,2 @@
+Hello from Python file handling!
+ have a nice day!
