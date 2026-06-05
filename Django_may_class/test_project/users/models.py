@@ -39,9 +39,14 @@ class Posts(models.Model):
     title = models.CharField(max_length=250)
     author = models.ForeignKey(students, on_delete=models.CASCADE, related_name='posts')
     content = models.TextField()
+    image = models.ImageField(upload_to='posts/')
 
     def __str__(self):
         return self.title
+    
+    class Meta:
+        verbose_name = "posts"
+        verbose_name_plural = "posts"
 
 
 class Captains(models.Model):

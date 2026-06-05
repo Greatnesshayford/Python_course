@@ -14,10 +14,10 @@
     {% block stylesLink %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
   </head>
-  <body class="h-100">
+  <body class="">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Sky.com</a>
+        <a class="navbar-brand" href="{% url 'home1' %}">Sky.com</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -32,16 +32,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home1' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'correction' %}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home2' %}">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              <a class="nav-link active" aria-current="page" href="{% url 'home3' %}">Company</a>
             </li>
           </ul>
         </div>

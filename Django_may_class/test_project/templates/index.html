@@ -34,6 +34,7 @@
           <ul>
             {% for post in students.posts.all %}
             <li>{{post.title}}</li>
+            <img src="{{ post.image.url }}" alt="{{post.title }}'s image" width="500">
             {% empty %}
             <h3 style="color: red">No posts available.</h3>
             {% endfor %}

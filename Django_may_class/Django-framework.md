@@ -111,6 +111,13 @@ MAY 25
 - Figure out a way to remove the extra "s" in the admin
 - in tabular form list 5 difference between sqlite, mongodb and postgresql
 
+June 5
+- Create a 5 pages website 
+- Downlaoad a template
+- Render the navbar, footer from the base file
+- link all pages in navbar with django links
+- serve all images as styles using django
+
 ## Classwork
 
 - create a new app called products
@@ -309,4 +316,41 @@ It is a view that contains the logic that controes what the users see. example, 
 
 ## Static Files
 - They are files that don't change dynamically eg css, images and js
-- They are done inside a folder called Static in your root folder
+- They are done inside a folder called Static in your root folder 
+
+```
+<!-- In settings.py -->
+
+  STATIC_URL = 'static/'
+  STATICFILES_DIRS = [
+    BASE_DIR / "static",
+  ]
+
+<!-- in template files using the static files -->
+  {% load static %}
+
+  <!-- To use static css file -->
+    <link rel="stylesheet" href="{% static 'css/correctionstyle.css' %}">
+
+  <!-- To use static image file -->
+    <img src="{% static 'images/esp32.png' %}" width="100%" alt="esp32">
+  ```
+
+## Pages linking (URL)
+- The url of a page in the template html file is the path name of the page and not the actual url
+```
+<!-- In the project urls.py file -->
+
+  <a class="navbar-brand" href="{% url 'home1' %}">Sky.com</a>
+```  
+
+
+## Media files
+- Django media files used to store multimedia data uploaded to the database.
+- The media folder is automatically created when we upload a new media file to our database. 
+- To all this functionality, we have to:
+```
+  <!-- In settings.py file -->
+  MEDIA_URL = '/media/'
+  MEDIA_ROOT = BASE_DIR / 'media' #manually added
+```
