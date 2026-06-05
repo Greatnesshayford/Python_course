@@ -1,0 +1,34 @@
+body {
+    background-color: green;
+}
+
+h1 {
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding-block: 20px;
+}
+
+.glass {
+    background-color: #30a2a08b;
+    box-shadow: 0px 0px 20px 5px #164949c0;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #d6dede78;
+    color: white;
+    text-wrap-style: pretty;
+    transition: all 0.5s ease;
+    cursor: default;
+}
+
+.glass:hover {
+    background-color: #30a2a0c0;
+    box-shadow: 0px 0px 30px 8px #164949c0;
+    padding: 10px;
+    margin: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #d6dede78;
+    color: white;
+    text-wrap-style: pretty;
+}
