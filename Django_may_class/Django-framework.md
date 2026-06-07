@@ -340,7 +340,13 @@ It is a view that contains the logic that controes what the users see. example, 
 - The url of a page in the template html file is the path name of the page and not the actual url
 ```
 <!-- In the project urls.py file -->
+  from django.conf import settings
+  from django.conf.urls.static import static
 
+  <!-- After the urlpatterns -->
+  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+<!-- In the template file that needs the url -->
   <a class="navbar-brand" href="{% url 'home1' %}">Sky.com</a>
 ```  
 
@@ -350,7 +356,9 @@ It is a view that contains the logic that controes what the users see. example, 
 - The media folder is automatically created when we upload a new media file to our database. 
 - To all this functionality, we have to:
 ```
-  <!-- In settings.py file -->
+<!-- In settings.py file -->
   MEDIA_URL = '/media/'
   MEDIA_ROOT = BASE_DIR / 'media' #manually added
 ```
+- - then `pip install pillow` to make use if models.ImageField(upload_to). 
+- - Finally update your model to allow image upload.
