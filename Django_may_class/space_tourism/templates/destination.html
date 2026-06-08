@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Destination | Space Tourism{% endblock %}
+{% block theme %}destination{% endblock %}
+{% block content %}
+  <main class="grid">
+    <p class="grid-one | fs-mid"><span class="cl-dark-grayish-blue">01</span> <span class="cl-grayish-blue uppercase">Pick your destination</span></p>
+    <img src="{{ destination.images.png }}" alt="" class="destination-img | grid-two">
+    <section id="selection" class="grid-three">
+      <ul class="navigate">
+        <li class="moon"><button id="0" class="cl-grayish-blue fs-small uppercase active">Moon</button></li>
+        <li class="mars"><button id="1"  class="cl-grayish-blue fs-small uppercase">Mars</button></li>
+        <li class="europa"><button id="2" class="cl-grayish-blue fs-small uppercase">Europa</button></li>
+        <li class="titan"><button id="3" class="cl-grayish-blue fs-small uppercase">Titan</button></li>
+      </ul>
+      <h1 class="fs-xl | uppercase cl-white">Moon</h1>
+      <p class="paragraph | cl-grayish-blue padding">
+        See our planet as  you’ve never seen it before. A perfect relaxing trip away to help 
+        regain perspective and come back refreshed. While you’re there, take in some history 
+        by visiting the Luna 2 and Apollo 11 landing sites.
+      </p>
+    </section>
+    <aside class="grid-four">
+      <h3 class="aside-grid-one | cl-grayish-blue uppercase">
+        Avg. distance
+      </h3>
+      <h3 class="aside-grid-three | cl-grayish-blue uppercase">
+        Est. travel time
+      </h3>
+      <p class="aside-grid-four | cl-white uppercase grid-four-font">
+        3 days
+      </p>
+      <p class="aside-grid-two | cl-white uppercase grid-four-font">
+        384,400 km
+      </p>
+    </aside>
+  </main>
+{% endblock %}

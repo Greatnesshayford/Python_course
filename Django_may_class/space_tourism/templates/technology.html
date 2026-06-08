@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Technology | Space Tourism{% endblock %}
+{% block theme %}technology{% endblock %}
+{% block content %}
+  <main class="grid | inverse-grid">
+    <p class="grid-one | fs-mid"><span class="cl-dark-grayish-blue">03</span> <span class="cl-grayish-blue uppercase">Space launch 101</span></p>
+    <img src="{{ technology.images.landscape }}" alt="" class="destination-img | grid-two">
+    <section id="selection" class="grid-three | no-base-rule  flex-bottom">
+      <h1 class="fs-small cl-grayish-blue uppercase
+      ">The terminology...</h1>
+      <h2 class="fs-xl-crew | uppercase cl-white">Launch vehicle</h2>
+      <p class="paragraph | cl-grayish-blue padding">
+        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!
+      </p>
+    </section>
+      <ul class="navigate grid-four flex-top">
+        <li class="moon"><button id="0" class="dot-btn active | cl-grayish-blue fs-small uppercase even-aspect-ratio">1</button></li>
+        <li class="mars"><button id="1"  class="dot-btn | cl-grayish-blue fs-small uppercase even-aspect-ratio">2</button></li>
+        <li class="europa"><button id="2" class="dot-btn | cl-grayish-blue fs-small uppercase even-aspect-ratio">3</button></li>
+      </ul>
+  </main>
+{% endblock %}

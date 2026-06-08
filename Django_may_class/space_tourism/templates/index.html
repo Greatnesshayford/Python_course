@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home | Space Tourism{% endblock %}
+{% block theme %}home{% endblock %}
+{% block homeActive %}active{% endblock %}
+{% block content %}
+<main class="flex">
+    <section class="flex-left">
+<h1 class="main-heading | flex "><span class="small-heading-text | fs-l cl-grayish-blue uppercase">So, you want to travel to
+      </span><span class="fs-xxl | cl-white uppercase">Space</span></h1>
+      <p class="paragraph | cl-grayish-blue fs-small">Let’s face it; if you want to go to space, you might as well genuinely go to 
+        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+        because we’ll give you a truly out of this world experience!</p>
+    </section>
+    <a href="{% url 'destination' %}" class="explore"><button class="flex-right | fs-mid btn-xl uppercase">Explore</button></a>
+  </main>
+  {% endblock %}
