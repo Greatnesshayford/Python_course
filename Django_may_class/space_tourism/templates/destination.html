@@ -2,7 +2,8 @@
 {% block title %}Destination | Space Tourism{% endblock %}
 {% block theme %}destination{% endblock %}
 {% block content %}
-  <main class="grid">
+<main class="grid">
+  <a href="{% url 'home' %}">Go home</a>
     <p class="grid-one | fs-mid"><span class="cl-dark-grayish-blue">01</span> <span class="cl-grayish-blue uppercase">Pick your destination</span></p>
     <img src="{{ destination.images.png }}" alt="" class="destination-img | grid-two">
     <section id="selection" class="grid-three">
