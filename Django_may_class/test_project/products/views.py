@@ -3,6 +3,7 @@ from django.views import View
 from django.http import HttpResponse as HR
 from users.models import students, Animals
 import random
+from .forms import ContactForm
 
 # Create your views here.
 def recent(request):
@@ -31,10 +32,20 @@ def paid(request):
     return HR("This the paid products")
 
 def homePageOne(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+        print(f"Alert!!!, {name} with email {email} just sent the message {message}")
+
     return render(request, "home.html")
 
 def homePageTwo(request):
-    return render(request, "home1.html")
+    form = ContactForm()
+    context = {
+        "form" : form
+    }
+    return render(request, "home1.html", context)
 
 def homePageThree(request):
     return render(request, "home2.html")

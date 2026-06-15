@@ -16,7 +16,8 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body class="{% block theme %}{% endblock %} | bg-repeat">
-    {% include 'includes/header.html' %} {% block content %} {% endblock %}
+    {% include 'includes/header.html' %} 
+    {% block content %}{% endblock %}
     <script>
       const CREWS_URL = "{% url 'get_crew_json' %}";
       const DESTINATIONS_URL = "{% url 'get_destination_json' %}";

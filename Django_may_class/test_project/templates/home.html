@@ -5,5 +5,24 @@
     <h1>This is home page 1</h1>
 </div>
 <p class="section1">Hello world</p>
+<div class="section-form">
+    <form action="" method="POST" class="container-sm shadow mb-5 card bg-light-subtle p-3" style="max-width: 500px;">
+        <h3 class="text-center fs-7 lh-lg fw-bold">Send us a message</h3>
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label fw-semibold fs-5">Full name:</label>
+            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label fw-semibold fs-5">Email:</label>
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email">
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label fw-semibold fs-5">Message:</label>
+            <textarea name="message" class="form-control form-control-lg" placeholder="Enter your message"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary">Send</button>
+    </form>
+</div>
 {% endblock %}
     

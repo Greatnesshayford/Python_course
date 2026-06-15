@@ -112,7 +112,8 @@ MAY 25
 - in tabular form list 5 difference between sqlite, mongodb and postgresql
 
 June 5
-- Create a 5 pages website 
+
+- Create a 5 pages website
 - Downlaoad a template
 - Render the navbar, footer from the base file
 - link all pages in navbar with django links
@@ -302,21 +303,25 @@ It is a view that contains the logic that controes what the users see. example, 
 ```
 
 ### Template inheritance
+
 - This is a base html file created to house repeated content over series of pages.
 - It makes use of `{% block title%}`, `{% endblock %}` and `{% block content %}` as placeholders for the variable templates
 
-### Inheritance is important 
+### Inheritance is important
+
 - Easier maintenance
 - cleaner code
-- Reuseable 
+- Reuseable
 
 ### Template including
+
 - Create a template for another set of code and including it into the main code.
 - Example creating a footer.html file and including it in your base.html
 
 ## Static Files
+
 - They are files that don't change dynamically eg css, images and js
-- They are done inside a folder called Static in your root folder 
+- They are done inside a folder called Static in your root folder
 
 ```
 <!-- In settings.py -->
@@ -334,31 +339,69 @@ It is a view that contains the logic that controes what the users see. example, 
 
   <!-- To use static image file -->
     <img src="{% static 'images/esp32.png' %}" width="100%" alt="esp32">
-  ```
+```
 
 ## Pages linking (URL)
+
 - The url of a page in the template html file is the path name of the page and not the actual url
+
 ```
 <!-- In the project urls.py file -->
   from django.conf import settings
   from django.conf.urls.static import static
 
   <!-- After the urlpatterns -->
-  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+  urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #needed for the media file url to display correctly
 
 <!-- In the template file that needs the url -->
   <a class="navbar-brand" href="{% url 'home1' %}">Sky.com</a>
-```  
-
+```
 
 ## Media files
+
 - Django media files used to store multimedia data uploaded to the database.
-- The media folder is automatically created when we upload a new media file to our database. 
+- The media folder is automatically created when we upload a new media file to our database.
 - To all this functionality, we have to:
+
 ```
 <!-- In settings.py file -->
   MEDIA_URL = '/media/'
   MEDIA_ROOT = BASE_DIR / 'media' #manually added
 ```
-- - then `pip install pillow` to make use if models.ImageField(upload_to). 
+
+- - then `pip install pillow` to make use if models.ImageField(upload_to).
 - - Finally update your model to allow image upload.
+
+## Django forms
+- A form allows user send data to your application. Example include: contact form registration form blog submission form
+- Cross-Site Request Forgery (CSRF) token is required to use django forms
+
+### form flow
+--------------------
+
+```
+
+User flls form
+      |
+Browser sends data
+      |
+Django recieves request
+      |
+Validation
+      |
+Save to DB
+      |
+Response returned
+
+```
+
+## CSRF Protection
+- Cross-Site Request Forgery (CSRF) is security attack where another site tries to submit forms onbehalf of another user
+- withpout csfr, django throws 403 forbbiden error meaning csrf verificaton failed
+
+- Form validation
+- cleaned form
+- form error display
+- submit form to admin
+- modelForm
+- custom form validation
